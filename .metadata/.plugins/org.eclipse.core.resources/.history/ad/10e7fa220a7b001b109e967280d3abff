@@ -1,5 +1,7 @@
 package com.cos.myiocdi;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,15 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PostController {
-
-	private final Robot robot;
+	@Autowired
+	private Robot robot; // DI(의존성 주입)
 	
-	public PostController(Robot robot) {
-		this.robot = robot;
-	}
-
 	@GetMapping("/")
 	public String home() {
 		return "home" + robot.getName();
 	}
+	
+	@Bean
+	public Robot getRobot() {
+		return new Robot();
+	}
+	
 }

@@ -2,7 +2,6 @@ package com.cos.myiocdi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class MyiocdiApplication {
@@ -11,8 +10,8 @@ public class MyiocdiApplication {
 		SpringApplication.run(MyiocdiApplication.class, args);
 	}
 	
-	@Bean
 	public Robot getRobot() {
 		return new Robot();
 	}
+
 }

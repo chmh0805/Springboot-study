@@ -11,8 +11,5 @@ public class MyiocdiApplication {
 		SpringApplication.run(MyiocdiApplication.class, args);
 	}
 	
-	@Bean
-	public Robot getRobot() {
-		return new Robot();
-	}
+	
 }
