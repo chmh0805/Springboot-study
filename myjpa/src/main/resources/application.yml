@@ -9,5 +9,7 @@ spring:  datasource:    url: jdbc:h2:mem:testdb
     password: 
   jpa:    database-platform: org.hibernate.dialect.H2Dialect # 방언 설정
     hibernate:      ddl-auto: update # create: 서버 실행시마다 테이블 새로 생성 / update: 서버 실행시 이미 존재하면 생성x
+      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     open-in-view: true
+  jackson:    serialization:      fail-on-empty-beans: false
